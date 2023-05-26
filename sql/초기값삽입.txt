@@ -1,0 +1,20 @@
+USE dataProject;
+
+INSERT INTO Pagetype (Pid, Nlist, Nfixed, Nname, Nhits, Ntime)
+VALUES
+    (0, 'div.board_list > ul > li', 'a > div.mark > span', 'a > div.top > p.tit', 'a > div.top > div.info > span:nth-child(3)', 'a > div.top > div.info > span:nth-child(1)'),
+    (1, 'table.board > tbody > tr', 'td.td_num > span', 'td.td_tit > a', 'td:nth-child(5)', 'td:nth-child(4)');
+
+
+INSERT INTO Category (Cid, Cname, Clink, Pid)
+VALUES
+    (1, '일반공지', 'http://www.dongguk.edu/article/GENERALNOTICES/list?pageIndex=', 0),
+    (2, '학사공지', 'http://www.dongguk.edu/article/HAKSANOTICE/list?pageIndex=', 0),
+    (3, '장학공지', 'http://www.dongguk.edu/article/JANGHAKNOTICE/list?pageIndex=', 0),
+    (4, '입시공지', 'http://www.dongguk.edu/article/IPSINOTICE/list?pageIndex=', 0),
+    (5, '국제공지', 'http://www.dongguk.edu/article/GLOBALNOLTICE/list?pageIndex=', 0),
+    (6, '학술/행사공지', 'http://www.dongguk.edu/article/HAKSULNOTICE/list?pageIndex=', 0),
+    (7, '행사공지', 'http://www.dongguk.edu/article/BUDDHISTEVENT/list?pageIndex=', 0),
+    (8, '알림사항', 'http://www.dongguk.edu/article/ALLIM/list?pageIndex=', 0),
+    (9, 'AI융합대학', 'https://ai.dongguk.edu/article/notice/list?pageIndex=', 1),
+    (10, '컴퓨터공학과', 'https://cse.dongguk.edu/article/notice1/list?pageIndex=', 1);

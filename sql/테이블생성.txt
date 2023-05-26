@@ -1,0 +1,30 @@
+CREATE DATABASE dataProject;
+
+USE dataProject;
+
+CREATE TABLE Pagetype (
+    Pid INT PRIMARY KEY,
+    Nlist VARCHAR(50),
+    Nfixed VARCHAR(50),
+    Nname VARCHAR(50),
+    Nhits VARCHAR(50),
+    Ntime VARCHAR(50)
+);
+
+CREATE TABLE Category (
+    Cid INT PRIMARY KEY,
+    Cname VARCHAR(20),
+    Clink VARCHAR(100),
+    Pid INT,
+    FOREIGN KEY (Pid) REFERENCES Pagetype(Pid) ON DELETE SET NULL ON UPDATE CASCADE
+);s
+
+CREATE TABLE Notice (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Cid INT,
+    title VARCHAR(200),
+    hits VARCHAR(250),
+    `time` VARCHAR(30),
+    FOREIGN KEY (Cid) REFERENCES Category(Cid) ON DELETE CASCADE ON UPDATE CASCADE,
+    UNIQUE (title, `time`)
+);
