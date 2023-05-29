@@ -24,7 +24,7 @@ def makecsv():
 
     # CSV 파일 저장
     csv_filename = '공지사항.csv'
-    with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
+    with open(csv_filename, 'w', newline='', encoding='utf-8-sig') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow([i[0] for i in cursor.description])  # 헤더 쓰기
         writer.writerows([str(value) for value in row] for row in results)  # 데이터 쓰기
