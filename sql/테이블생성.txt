@@ -17,7 +17,7 @@ CREATE TABLE Category (
     Clink VARCHAR(100),
     Pid INT,
     FOREIGN KEY (Pid) REFERENCES Pagetype(Pid) ON DELETE SET NULL ON UPDATE CASCADE
-);s
+);
 
 CREATE TABLE Notice (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,5 +26,5 @@ CREATE TABLE Notice (
     hits VARCHAR(250),
     `time` VARCHAR(30),
     FOREIGN KEY (Cid) REFERENCES Category(Cid) ON DELETE CASCADE ON UPDATE CASCADE,
-    UNIQUE (title, `time`)
+    UNIQUE (Cid, title, `time`)
 );
